@@ -1,0 +1,510 @@
+:root {
+    --c1: #1E1B8C; /* fondo header / footer / titulos */
+    --c2: #C6E9FF; /* botones / hover / detalles */
+    --c3: #FC7A1E; /* fondo general */
+    --c4: #2C9949; /* tarjetas / secundarios */
+    --c5: #3E3E3E;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: scroll; 
+    background-color: #1a189c;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: #C6E9FF;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #1a189c;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover{
+    border-bottom: 2px solid #FC7A1E;
+}
+
+section {
+    padding: 100px 50px;
+    position: relative;
+    text-align: center;
+}
+
+footer {
+    background: #1E1B8C;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Cambios de color para botones */
+.ver-mas-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2C9949;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.ver-mas-btn:hover {
+    border-bottom: 2px solid #1E1B8C;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Sección "¿Quiénes somos?" con imagen de fondo y efecto de desplazamiento */
+#quienes {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../sources/background_p.png'); /* Ajusta esta ruta si estás en otra carpeta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+
+#terapias,
+#podcasts,
+.psico-card:hover .psico-info {
+   background-color: #FC7A1E;
+}
+        
+.head-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.head-img {
+    position: absolute;
+    top: 55%;
+    width: 80%;
+    max-width: 800px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: none;
+    z-index: 2;
+}
+
+.head-img.left {
+    left: -100%;
+}
+
+.head-img.right {
+    right: -100%;
+}
+
+#quienes.start .head-img.left {
+    animation: enterLeft 1.5s ease forwards;
+}
+
+#quienes.start .head-img.right {
+    animation: enterRight 1.5s ease forwards;
+}
+
+@keyframes enterLeft {
+    to {
+        left: 8%;
+        opacity: 1;
+    }
+}
+
+@keyframes enterRight {
+    to {
+        right: 8%;
+        opacity: 1;
+    }
+}
+
+.blur-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.8s ease 1.4s;
+    z-index: 1;
+}
+
+#quienes.start .blur-layer {
+    backdrop-filter: blur(2px);
+}
+
+.quienes-contenido {
+    position: relative;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s ease 1.5s;
+    text-align: center;
+    color: #FC7A1E;
+    /*mix-blend-mode: difference;*/
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+}
+
+#quienes.start .quienes-contenido {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+        
+/* Efecto de desplazamiento */
+.parallax {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/*SECCION SOBRE NOSOTROS*/
+#sobre-nosotros {
+    position: relative;
+    background-image: url('../sources/fondoMid.png'); /* tu patrón */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    color: #1E1B8C;
+    padding: 100px 20px;
+}
+
+#sobre-nosotros .contenido {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+#sobre-nosotros .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /*background-color: rgba(255, 255, 255, 0.1); /* Transparente */
+    backdrop-filter: blur(4px);
+    z-index: 0;
+}
+#sobre-nosotros .contenido {
+    position: relative;
+    z-index: 1;
+}
+
+#sobre-nosotros h2,
+#sobre-nosotros p {
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+}
+
+#sobre-nosotros::before {
+    backdrop-filter: blur(50%);
+}
+
+
+/*PARTE DE LOS PSICOLOGOS*/
+#psicologos {
+    background: url('../sources/background_p2.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+    background-color: #1E1B8C;
+    color: #FF8228;
+}
+
+.psico-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.psico-card {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px var(--c1);
+    transition: transform 0.3s ease;
+}
+
+.psico-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.psico-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(1, 89, 57, 0.9);
+    background-color: var(--crema);
+    color: #FC7A1E;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.psico-card:hover .psico-info {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/*glow exterior*/
+.psico-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px #2C9949; 
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .psico-card:hover {
+        box-shadow: none;
+        transform: none;
+    }
+}
+
+.psico-info h4 {
+    margin-bottom: 8px; /* antes: default (generalmente 1em) */
+    color: #1E1B8C;
+}
+
+.psico-info span {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #1E1B8C;
+}
+
+.psico-card.active .psico-info {
+    opacity: 1;
+    transform: scale(1);
+    color: #1E1B8C;
+}     
+
+/* SECCION DE TERAPIAS*/
+#terapias {
+    background-color:var(--c1);
+    color: white;
+    padding: 60px 20px;
+}
+
+.terapias-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.tarjeta-terapia {
+    background-color: var(--c4);
+    border-radius: 12px;
+    width: 220px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-terapia img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-terapia h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--naranja-fuerte);
+}
+
+.tarjeta-terapia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--c2);
+}
+
+/* Resultado dinámico */
+.opciones-terapia {
+    margin-top: 40px;
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.opciones-terapia ul {
+    list-style: none;
+    padding: 0;
+}
+
+.opciones-terapia li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.oculto {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+    
+/*RESPONSIVIDAD*/
+@media (max-width: 768px) {
+    .psico-grid,
+    .terapias-grid,
+    .podcast-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .psico-card,
+    .tarjeta-terapia {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .articulo-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .articulo-texto, .articulo-imagen {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .quienes-contenido h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+  .psico-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .psico-card {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .podcast-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .podcast-video {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 0;
+  }
+}
+
+/*DESVANECIMIENTO*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

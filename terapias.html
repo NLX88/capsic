@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terapias | CPASIC</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="sources/logov1.png" alt="Logo CPASIC" class="logo">
+        </div>
+        <nav>
+            <a href="index.html#quienes">¿Quiénes somos?</a>
+            <a href="terapias.html">Terapias</a>
+            <a href="articulos.html">Artículos</a>
+            <a href="podcasts.html">Podcasts</a>
+        </nav>
+    </header>
+
+    <section id="terapias" class="section fade-in">
+        <h2 class="text-center">¿Qué tipo de terapia estás buscando?</h2>
+        <p class="text-center">Selecciona la edad de la persona para ver opciones disponibles</p>
+
+        <div class="terapias-grid fade-in">
+            <div class="tarjeta-terapia" data-edad="niño">
+                <img src="sources/icon1.png" alt="Niños" />
+                <h3>Niños</h3>
+            </div>
+            <div class="tarjeta-terapia" data-edad="adolescente">
+                <img src="sources/icon2.png" alt="Adolescentes" />
+                <h3>Adolescentes</h3>
+            </div>
+            <div class="tarjeta-terapia" data-edad="adulto">
+                <img src="sources/icon3.png" alt="Adultos" />
+                <h3>Adultos</h3>
+            </div>
+        </div>
+
+        <div id="opciones-terapia" class="opciones-terapia oculto"></div>
+    </section>
+
+ <footer>
+        <p>Síguenos en redes sociales:</p>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">X</a>
+            <a href="#">WhatsApp</a>
+        </div>
+        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+    </footer>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcasts | CPASIC</title>
+    <link rel="stylesheet" href="./styles/podcasts.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="sources/logov1.png" alt="Logo CPASIC" class="logo">
+        </div>
+        <nav>
+            <a href="index.html#quienes">¿Quiénes somos?</a>
+            <a href="articulos.html">Artículos</a>
+            <a href="podcasts.html">Podcasts</a>
+        </nav>
+    </header>
+
+    <section id="podcasts" class="section-bg fade-in">
+        <h2>Podcasts</h2>
+        <div id="podcast-container" class="podcast-container fade-in">
+            <!-- Los videos se insertarán aquí dinámicamente -->
+        </div>
+        <div class="ver-mas-container">
+            <a href="https://www.youtube.com/channel/UCxfkMMXiSuwht2sl0qzUKKg" target="_blank" class="ver-mas-btn">
+                Ver más contenido
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const API_KEY = 'AIzaSyBwJkJXbCVinaaNSSLih3YvXQ_a8WboWNk';
+        const CHANNEL_ID = 'UCxfkMMXiSuwht2sl0qzUKKg';
+        const MAX_RESULTS = 10;
+
+        async function cargarVideos() {
+            try {
+                const response = await fetch(
+                    `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${MAX_RESULTS}`
+                );
+                const data = await response.json();
+
+                const container = document.getElementById('podcast-container');
+                container.innerHTML = '';
+
+                const videos = data.items.filter(item => item.id.kind === 'youtube#video').slice(0, 3);
+
+                videos.forEach(item => {
+                    container.innerHTML += `
+                        <div class="podcast-video">
+                            <iframe src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
+                            <h3 class="podcast-title">${item.snippet.title}</h3>
+                        </div>
+                    `;
+                });
+            } catch (error) {
+                console.error('Error al cargar los videos:', error);
+            }
+        }
+
+        cargarVideos();
+    </script>
+
+    <footer>
+        <p>Síguenos en redes sociales:</p>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">X</a>
+            <a href="#">WhatsApp</a>
+        </div>
+        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+    </footer>
+
+    <script src="./scripts/scripts.js"></script>
+</body>
+</html>

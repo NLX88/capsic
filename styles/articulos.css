@@ -1,0 +1,122 @@
+/* styles/articulos.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+:root {
+    --color-primario: #A18BBD;
+    --color-secundario: #FC7A1E;
+    --color-fondo: #F9C784;
+    --color-oscuro: #3B28CC;
+    --color-claro: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: whitesmoke;
+    color: var(--color-oscuro);
+}
+
+header {
+    background-color: #C6E9FF;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 50px;
+}
+
+nav a {
+    color: #1E1B8C;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #FC7A1E;
+}
+
+section#articulos {
+    padding: 80px 20px 60px;
+    text-align: center;
+}
+
+.articulo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.articulo-texto {
+    flex: 1;
+    min-width: 280px;
+    text-align: left;
+}
+
+.articulo-texto h3 {
+    color: var(--color-oscuro);
+    margin-bottom: 10px;
+}
+
+.articulo-texto p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.articulo-imagen {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.articulo-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articulo-imagen img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px #FC7A1E;
+}
+
+footer {
+    background-color: var(--color-oscuro);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.articulo-texto a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.articulo-texto a:hover {
+  text-decoration: underline;
+  color: var(--naranja-main, #2C9949);
+}
