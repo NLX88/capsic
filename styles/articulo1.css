@@ -104,3 +104,40 @@ footer {
   background-color: var(--color-subtle);
   color: black;
 }
+
+
+.art-figure {
+  margin: 1.25rem auto;
+  max-width: 760px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+.art-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+.art-figure:hover img {
+  transform: scale(1.01);
+}
+.art-figure figcaption {
+  font-size: .9rem;
+  color: #666;
+  padding: .5rem .75rem;
+}
+
+/* Opcional: espaciar mejor párrafos con imágenes cerca */
+.contenido p + .art-figure,
+.art-figure + p {
+  margin-top: 1rem;
+}
+
+/* Responsive ajustes menores */
+@media (max-width: 600px) {
+  .art-figure { margin: 1rem auto; }
+  .art-figure img { aspect-ratio: 4 / 3; }
+}

@@ -14,7 +14,7 @@ body {
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: scroll; 
-    background-color: #1a189c;
+    background-color: #C6E9FF;
     font-family: "Roboto Condensed", sans-serif;
 }
 
@@ -32,7 +32,7 @@ header {
 }
 
 nav a {
-    color: #1a189c;
+    color: #1E1B8C;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -49,8 +49,8 @@ section {
 }
 
 footer {
-    background: #1E1B8C;
-    color: white;
+    background: #C6E9FF;
+    color: black;
     text-align: center;
     padding: 20px;
     margin-top: 20px;
@@ -101,6 +101,7 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  font-weight: bold;
 }
 
 
@@ -212,13 +213,14 @@ footer {
 /*SECCION SOBRE NOSOTROS*/
 #sobre-nosotros {
     position: relative;
-    background-image: url('../sources/fondoMid.png'); /* tu patrón */
+    background-image: url('../sources/fondoMid.png'); /*PATTERN*/
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     overflow: hidden;
     color: #1E1B8C;
-    padding: 100px 20px;
+    font-weight:600;
+    padding: 200px 20px;
 }
 
 #sobre-nosotros .contenido {
@@ -244,9 +246,9 @@ footer {
     text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
 }
 
-#sobre-nosotros::before {
+/*#sobre-nosotros::before {
     backdrop-filter: blur(50%);
-}
+}*/
 
 
 /*PARTE DE LOS PSICOLOGOS*/
@@ -256,6 +258,7 @@ footer {
     background-attachment: scroll;
     background-color: #1E1B8C;
     color: #FF8228;
+    backdrop-filter: blur(50%);
 }
 
 .psico-grid {
